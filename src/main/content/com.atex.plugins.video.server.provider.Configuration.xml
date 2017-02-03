@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+  <input-template name="com.atex.plugins.video.server.provider.Configuration" label="com.atex.plugins.video.server.provider.Configuration">
+    <policy>com.atex.plugins.video.server.provider.ConfigurationPolicy</policy>
+    <editor>com.polopoly.plugin.OPluginConfigContextPolicyWidget</editor>
+    <viewer>com.polopoly.plugin.OPluginConfigContextPolicyWidget</viewer>
+
+    <type>AppConfig</type>
+
+    <param name="EditState_saveAndInsert">false</param>
+    <param name="EditState_saveAndView">true</param>
+    <param name="EditState_saveAndClose">false</param>
+    <param name="ViewState_insert">false</param>
+
+    <field name="name" input-template="p.ContentName" label="cm.label.Name" required="true" />
+
+    <field name="videoServerBackendUrl" input-template="p.TextInput" label="com.atex.plugins.video.server.provider.Configuration.videoServerBackendUrl" />
+
+  </input-template>
+</template-definition>

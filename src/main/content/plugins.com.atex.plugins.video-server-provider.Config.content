@@ -1,0 +1,6 @@
+id:.
+major:appconfig
+inputtemplate:com.atex.plugins.video.server.provider.Configuration
+securityparent:p.siteengine.Configuration.d
+component:polopoly.Content:name:VideoServer Provider Configuration
+component:videoServerBackendUrl:value:http\://localhost\:8080/video-server

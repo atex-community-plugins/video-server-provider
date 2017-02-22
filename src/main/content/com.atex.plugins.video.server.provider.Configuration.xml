@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
   <input-template name="com.atex.plugins.video.server.provider.Configuration" label="com.atex.plugins.video.server.provider.Configuration">
-    <policy>com.atex.plugins.video.server.provider.ConfigurationPolicy</policy>
+    <policy>com.atex.plugins.video.server.provider.ConfigurationProviderPolicy</policy>
     <editor>com.polopoly.plugin.OPluginConfigContextPolicyWidget</editor>
     <viewer>com.polopoly.plugin.OPluginConfigContextPolicyWidget</viewer>
 

@@ -10,7 +10,7 @@ import com.polopoly.cm.policy.PolicyCMServer;
  *
  * @author mnova
  */
-public class ConfigurationPolicy extends BaselinePolicy {
+public class ConfigurationProviderPolicy extends BaselinePolicy {
 
     public static final String EXTERNALID = "plugins.com.atex.plugins.video-server-provider.Config";
 
@@ -24,9 +24,9 @@ public class ConfigurationPolicy extends BaselinePolicy {
         return getVideoserverBackendUrl() + "/api/video/upload";
     }
 
-    public static ConfigurationPolicy getConfiguration(final PolicyCMServer cmServer) throws CMException {
+    public static ConfigurationProviderPolicy getConfiguration(final PolicyCMServer cmServer) throws CMException {
         final ExternalContentId contentId = new ExternalContentId(EXTERNALID);
-        return (ConfigurationPolicy) cmServer.getPolicy(contentId);
+        return (ConfigurationProviderPolicy) cmServer.getPolicy(contentId);
     }
 
 }

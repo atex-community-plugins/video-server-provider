@@ -42,6 +42,7 @@
     <video-plugin.version>1.2-SNAPSHOT</video-plugin.version>
     <jersey.version>1.15</jersey.version>
     <gong.version>2.3</gong.version>
+    <json.webtoken.version>0.7.0</json.webtoken.version>
   </properties>
   <pluginRepositories>
     <pluginRepository>
@@ -108,6 +109,12 @@
       <groupId>com.sun.jersey.contribs</groupId>
       <artifactId>jersey-multipart</artifactId>
       <version>${jersey.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>${json.webtoken.version}</version>
     </dependency>
 
     <dependency>

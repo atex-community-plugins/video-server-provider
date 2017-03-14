@@ -28,4 +28,10 @@ public class VideoPolicyStreamProvider implements VideoStreamProvider {
         return new ByteArrayInputStream(os.toByteArray());
     }
 
+    @Override
+    public String getSourceFilename(final VideoPolicy videoPolicy) throws CMException {
+        final VideoContentDataBean data = videoPolicy.getContentData();
+        return data.getVideoPath();
+    }
+
 }

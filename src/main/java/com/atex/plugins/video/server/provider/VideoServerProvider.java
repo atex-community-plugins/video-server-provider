@@ -62,12 +62,14 @@ public class VideoServerProvider implements VideoEncoderProvider {
 
         final String jwt = createJWT(videoPolicy.getContentId(), getVideoConfig().getJWTSecret());
 
+        final String filename = streamProvider.getSourceFilename(videoPolicy);
         final InputStream stream = streamProvider.fetch(videoPolicy);
         final FormDataMultiPart part = new FormDataMultiPart()
                 .field("file", stream, MediaType.APPLICATION_OCTET_STREAM_TYPE)
                 .field("contentId", videoPolicy.getContentId().getContentId().getContentIdString())
                 .field("videoUUID", videoUUID)
                 .field("videoName", videoPolicy.getName())
+                .field("fileName", filename)
                 .field("siteCode", getSiteCode(videoPolicy))
                 .field("webhook", getUpdateVideoUrl(videoPolicy.getContentId()))
                 .field("jwt", jwt);

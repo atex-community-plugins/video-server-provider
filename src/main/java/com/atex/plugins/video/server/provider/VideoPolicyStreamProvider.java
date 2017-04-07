@@ -7,7 +7,9 @@ import java.io.InputStream;
 
 import com.atex.plugins.video.VideoContentDataBean;
 import com.atex.plugins.video.VideoPolicy;
+import com.atex.plugins.video.VideoStreamNotFoundException;
 import com.atex.plugins.video.VideoStreamProvider;
+import com.google.common.base.Strings;
 import com.polopoly.cm.client.CMException;
 
 /**
@@ -21,6 +23,10 @@ public class VideoPolicyStreamProvider implements VideoStreamProvider {
     public InputStream fetch(final VideoPolicy videoPolicy) throws CMException, IOException {
 
         final VideoContentDataBean data = videoPolicy.getContentData();
+
+        if (Strings.isNullOrEmpty(data.getVideoPath())) {
+            throw new VideoStreamNotFoundException();
+        }
 
         final ByteArrayOutputStream os = new ByteArrayOutputStream();
         videoPolicy.exportFile(data.getVideoPath(), os);

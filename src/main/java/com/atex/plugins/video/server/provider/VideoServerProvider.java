@@ -70,7 +70,7 @@ public class VideoServerProvider implements VideoEncoderProvider {
                 .field("videoUUID", videoUUID)
                 .field("videoName", videoPolicy.getName())
                 .field("fileName", filename)
-                .field("siteCode", getSiteCode(videoPolicy))
+                .field("siteCode", Strings.nullToEmpty(getSiteCode(videoPolicy)))
                 .field("webhook", getUpdateVideoUrl(videoPolicy.getContentId()))
                 .field("jwt", jwt);
 
